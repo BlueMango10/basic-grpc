@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "example.com/grpcdemo/shared";
+
+service DemoService {
+    rpc Poke (Finger) returns (Reaction);
+}
+
+message Finger {
+    string description = 1;
+}
+
+message Reaction {
+    repeated string insults = 1;
+}
